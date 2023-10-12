@@ -10,6 +10,7 @@ namespace wsei5
             while(true)
             {
                 Console.WriteLine("wprowadz liczbe lub q aby wyjsc");
+                Console.WriteLine();
                 string input = Console.ReadLine();
 
                 if (input.ToLower() == "q")
@@ -23,7 +24,9 @@ namespace wsei5
                 }
                 else
                 {
+                    Console.WriteLine();
                     Console.WriteLine("zle dane");
+                    Console.WriteLine();
                 }
             }
         }
@@ -35,12 +38,19 @@ namespace wsei5
                 double lower = Math.Pow(10, i - 1);
                 double higher = Math.Pow(10, i) + 1;
 
-
-                if (userInput >= lower && userInput < higher)
+                if (i > 1)
                 {
-                    Console.WriteLine($"{userInput} jest w przedziale nr.{i} od {lower} do {higher}");
+                    lower++;
+                }
+
+
+                if (userInput >= lower && userInput < higher || userInput == 1)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine($"{userInput} jest w przedziale {i} od {lower} do {higher - 1}");
                     break;
                 }
+                
             }
         }
     }
