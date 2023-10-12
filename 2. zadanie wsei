@@ -1,0 +1,47 @@
+using System.Runtime.ExceptionServices;
+
+namespace wsei5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            while(true)
+            {
+                Console.WriteLine("wprowadz liczbe lub q aby wyjsc");
+                string input = Console.ReadLine();
+
+                if (input.ToLower() == "q")
+                {
+                    break;
+                }
+
+                if(double.TryParse(input, out double userInput))
+                {
+                    CheckIf(userInput);
+                }
+                else
+                {
+                    Console.WriteLine("zle dane");
+                }
+            }
+        }
+
+        static void CheckIf(double userInput)
+        {
+            for (int i = 1; ; i++)
+            {
+                double lower = Math.Pow(10, i - 1);
+                double higher = Math.Pow(10, i) + 1;
+
+
+                if (userInput >= lower && userInput < higher)
+                {
+                    Console.WriteLine($"{userInput} jest w przedziale nr.{i} od {lower} do {higher}");
+                    break;
+                }
+            }
+        }
+    }
+}
