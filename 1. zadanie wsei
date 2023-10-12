@@ -8,9 +8,15 @@ namespace wsei
             var input2 = int.Parse(Console.ReadLine());
             var input3 = int.Parse(Console.ReadLine());
 
-            var sum = input1 + input2 + input3;
-
-            Console.WriteLine(sum);
+            if(input1 <= 100 && input2 <= 100 && input3 <= 100)
+            {
+               var sum = input1 + input2 + input3;
+               Console.WriteLine(sum);
+            }
+            else
+            {
+                Console.WriteLine("Liczby nie mogą przekraczać 100");
+            }
         }
     }
 }
